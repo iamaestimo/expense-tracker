@@ -70,3 +70,6 @@ group :test do
 end
 
 gem "appsignal"
+
+gem "devise", "~> 4.9"
+gem 'dotenv'

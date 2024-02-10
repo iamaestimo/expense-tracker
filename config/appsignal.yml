@@ -1,7 +1,6 @@
 default: &defaults
   # Your push api key, it is possible to set this dynamically using ERB:
-  # push_api_key: "<%= ENV['APPSIGNAL_PUSH_API_KEY'] %>"
-  push_api_key: "bdfe6e75-d5c5-432e-83fc-26e237b6b161"
+   push_api_key: "<%= ENV['APPSIGNAL_PUSH_API_KEY'] %>"
 
   # Your app's name
   name: "ExpenseTracker"
