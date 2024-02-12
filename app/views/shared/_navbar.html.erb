@@ -5,7 +5,7 @@
         <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Expense Tracker</span>
       </a>
       <div class="flex items-center lg:order-2">
-        <% if user_logged_in? %>
+        <% if user_signed_in? %>
           <%= link_to 'Logout', destroy_user_session_path, class: '' %>
         <% else %>
           <%= link_to new_user_session_path, class: 'bg-primary hover:bg-secondary text-white font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2' do %>
