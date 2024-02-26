@@ -22,8 +22,8 @@ default: &default
 development:
   <<: *default
   database: expense_tracker_development
-  username: <%= Rails.application.credentials[:local_db][:user] %>
-  password: <%= Rails.application.credentials[:local_db][:password] %>
+  username: <%= ENV.fetch("LOCAL_DB_USER") %>
+  password: <%= ENV.fetch("LOCAL_DB_PASS") %>
 #
 production:
   <<: *default
