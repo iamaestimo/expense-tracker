@@ -8,7 +8,28 @@
     <%= link_to "New expense", new_expense_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
   </div>
 
-  <div id="expenses" class="min-w-full">
-    <%= render @expenses %>
+  <div class="py-4">
+    <table class="table-auto">
+    <thead class="bg-gray-200">
+      <tr>
+        <th class="px-6 py-3">Date</th>
+        <th class="px-6 py-3">Title</th>
+        <th class="px-6 py-3">Desc.</th>
+        <th class="px-6 py-3">Amount</th>
+        <th class="px-6 py-3">Status</th>
+      </tr>      
+    </thead>
+    <tbody>
+      <% @expenses.each do |expense| %>
+        <tr class="bg-white border-b">
+          <td><%= expense.expense_date %></td>
+          <td><%= expense.title %></td>
+          <td><%= expense.description.truncate(25) %></td>
+          <td><%= number_to_currency(expense.amount) %></td>
+          <td><%= expense.status? ? "Reconciled" : "Not Reconciled" %></td>
+        </tr>
+      <% end %>
+    </tbody>    
+  </table>
   </div>
 </div>
