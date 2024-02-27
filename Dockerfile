@@ -36,6 +36,12 @@ RUN bundle exec bootsnap precompile app/ lib/
 ARG RAILS_MASTER_KEY
 ENV RAILS_MASTER_KEY=${RAILS_MASTER_KEY}
 
+ARG LOCAL_DB_USER
+ENV LOCAL_DB_USER=${LOCAL_DB_USER}
+
+ARG LOCAL_DB_PASS
+ENV LOCAL_DB_PASS=${LOCAL_DB_PASS}
+
 # Precompiling assets for production without requiring secret RAILS_MASTER_KEY
 RUN SECRET_KEY_BASE=RAILS_MASTER_KEY ./bin/rails assets:precompile
 RUN #SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile
