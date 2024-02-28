@@ -74,4 +74,13 @@ Rails.application.configure do
   # Raise error when a before_action's only/except options reference missing actions
   config.action_controller.raise_on_missing_callback_actions = true
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  # Httplog
+  HttpLog.configure do |config|
+    config.enabled = true
+    config.logger = Logger.new($stdout)
+    config.logger_method = :log
+    config.prefix = ->{ "[httplog] #{Time.now} " }
+    config.color = false
+  end
 end

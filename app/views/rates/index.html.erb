@@ -1,0 +1,29 @@
+<div>
+  <h1 class="font-bold text-4xl">Latest FX Rates</h1>
+  <p>Here are the latest rates</p>
+  <hr>
+  <div class="pt-4">
+    <table class="table-auto">
+      <thead>
+        <tr>
+          <th>Base Rate</th>
+          <th>EUR</th>
+          <th>CAD</th>
+          <th>AUD</th>
+          <th>GBP</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @rates.each do |rate| %>
+          <tr>
+            <td><%= rate.base_rate_name %></td>
+            <td><%= rate.eur %></td>
+            <td><%= rate.cad %></td>
+            <td><%= rate.aud %></td>
+            <td><%= rate.gbp %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

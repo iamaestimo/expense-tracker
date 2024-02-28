@@ -74,3 +74,6 @@ gem "appsignal"
 gem "devise", "~> 4.9"
 gem 'dotenv', groups: [:development, :test]
 gem 'faker'
+gem 'httparty'
+gem 'httplog'
+gem "good_job"
